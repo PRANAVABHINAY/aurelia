@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AURELIA</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="AURELIA is a private, voice-first AI assistant that runs entirely on your own laptop GPU. English and Telugu, offline, with a security layer that treats the AI as untrusted.">
+<meta property="og:title" content="AURELIA, the assistant that never leaves your laptop">
+<meta property="og:description" content="Offline, voice-first AI for RTX laptops. English and Telugu. 97 security tests passing.">
+<meta name="theme-color" content="#06080d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Schibsted+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+Telugu:wght@400;600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<!--PAGE-START-->
+<div class="boot" id="boot" aria-hidden="true">
+  <div class="boot__inner">
+    <div class="boot__ring"></div>
+    <p class="boot__line mono" id="bootLine">Loading LLM into GPU…</p>
+  </div>
+</div>
+
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="nav__inner wrap">
+    <a href="#top" class="brand" aria-label="AURELIA home">
+      <span class="brand__orb" aria-hidden="true"></span>
+      <span class="brand__word">Aurelia</span>
+    </a>
+    <nav class="nav__links" aria-label="Sections">
+      <a href="#how">How it works</a>
+      <a href="#features">Features</a>
+      <a href="#security">Security</a>
+      <a href="#telugu">Languages</a>
+      <a href="#founder">Founder</a>
+    </nav>
+    <a class="btn btn--small btn--gold magnetic" href="#beta">Join the beta</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <canvas class="hero__sphere" id="heroSphere" aria-hidden="true"></canvas>
+  <div class="hero__glow" aria-hidden="true"></div>
+  <div class="wrap hero__inner">
+    <p class="eyebrow hero__eyebrow"><span class="dot dot--live"></span> Offline AI assistant · English &amp; <span lang="te">తెలుగు</span></p>
+    <h1 class="hero__title split">
+      <span class="line">The assistant</span>
+      <span class="line">that <em>never leaves</em></span>
+      <span class="line">your laptop.</span>
+    </h1>
+    <p class="hero__sub reveal-load">AURELIA is a voice-first AI that runs entirely on your own RTX graphics card. Talk to her in English or Telugu. She finds your files, reviews your 3D prints and builds your reports, works with the Wi-Fi switched off, and checks every action against a rulebook the AI itself can't rewrite.</p>
+    <div class="hero__cta reveal-load">
+      <a class="btn btn--gold magnetic" href="#beta">Request beta access</a>
+      <a class="btn btn--ghost magnetic" href="#how">See how she thinks</a>
+    </div>
+
+    <div class="voice reveal-load" aria-live="polite">
+      <div class="voice__states" role="group" aria-label="Sphere state">
+        <button class="chip is-on" data-state="idle" type="button"><i style="--c:var(--idle)"></i>Idle</button>
+        <button class="chip" data-state="listening" type="button"><i style="--c:var(--listen)"></i>Listening</button>
+        <button class="chip" data-state="thinking" type="button"><i style="--c:var(--think)"></i>Thinking</button>
+        <button class="chip" data-state="speaking" type="button"><i style="--c:var(--gold)"></i>Speaking</button>
+      </div>
+      <p class="voice__line"><span class="voice__who mono">AURELIA</span> <span id="voiceText">AURELIA online. Good to see you, Sir.</span><span class="caret"></span></p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <dl class="stats reveal-load">
+      <div><dt>On-device AI</dt><dd><span class="count" data-to="100">100</span>%</dd></div>
+      <div><dt>Languages by voice</dt><dd>EN · <span lang="te">తె</span></dd></div>
+      <div><dt>Red-team tests passing</dt><dd><span class="count" data-to="97">97</span></dd></div>
+      <div><dt>GPU memory needed</dt><dd><span class="count" data-to="8">8</span><small> GB</small></dd></div>
+    </dl>
+  </div>
+  <a class="scrollcue" href="#thesis" aria-label="Scroll down"><span></span></a>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Files</span><b>◆</b><span>3D models</span><b>◆</b><span>CAD print review</span><b>◆</b><span>Workshop mode</span><b>◆</b><span>Pipelines</span><b>◆</b><span>Gaming profiles</span><b>◆</b><span>Vision</span><b>◆</b><span>Local memory</span><b>◆</b><span>PC doctor</span><b>◆</b><span>Private vault</span><b>◆</b><span>Gmail</span><b>◆</b><span>Daily debrief</span><b>◆</b><span lang="te">తెలుగు</span><b>◆</b>
+    <span>Files</span><b>◆</b><span>3D models</span><b>◆</b><span>CAD print review</span><b>◆</b><span>Workshop mode</span><b>◆</b><span>Pipelines</span><b>◆</b><span>Gaming profiles</span><b>◆</b><span>Vision</span><b>◆</b><span>Local memory</span><b>◆</b><span>PC doctor</span><b>◆</b><span>Private vault</span><b>◆</b><span>Gmail</span><b>◆</b><span>Daily debrief</span><b>◆</b><span lang="te">తెలుగు</span><b>◆</b>
+  </div>
+</div>
+
+<!-- ============ THESIS ============ -->
+<section class="thesis" id="thesis">
+  <div class="wrap">
+    <p class="eyebrow">Why AURELIA exists</p>
+    <p class="thesis__text" id="thesisText">Cloud assistants send every word you say to someone else's server. AURELIA keeps it all at home. The brain, the ears and the voice run on the graphics card in your laptop, so your files, your camera and your money records never have to leave it. She speaks your language, she has a dry British sense of humour, and she cannot act without passing a rulebook she is not allowed to read.</p>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS (PINNED) ============ -->
+<section class="flow" id="how">
+  <div class="flow__pin">
+    <div class="wrap flow__grid">
+      <div class="flow__copy">
+        <p class="eyebrow">How one request flows</p>
+        <h2 class="h2">From your voice to a finished task in about <em>five seconds</em>.</h2>
+        <ol class="steps" id="steps">
+          <li class="step is-active" data-state="listening">
+            <span class="step__n mono">1</span>
+            <div><h3>Ears</h3><p>The mic records until you pause. Whisper large-v3-turbo turns speech into text on the GPU in about 0.7 seconds, listening only for English and Telugu.</p></div>
+          </li>
+          <li class="step" data-state="thinking">
+            <span class="step__n mono">2</span>
+            <div><h3>Brain</h3><p>qwen3:8b, an open 8-billion-parameter model running locally through Ollama, decides whether to answer or to call one of her tools.</p></div>
+          </li>
+          <li class="step" data-state="guard">
+            <span class="step__n mono">3</span>
+            <div><h3>Security gate</h3><p>Every tool call goes to the Policy Engine. The model can only propose. Ordinary code decides.</p></div>
+          </li>
+          <li class="step" data-state="thinking">
+            <span class="step__n mono">4</span>
+            <div><h3>Hands</h3><p>The approved tool runs: open a file, read the inbox, build a slide deck. Its output comes back wrapped and marked as untrusted.</p></div>
+          </li>
+          <li class="step" data-state="speaking">
+            <span class="step__n mono">5</span>
+            <div><h3>Voice</h3><p>She speaks sentence by sentence while the model is still writing. Kokoro speaks English in a British voice. Meta MMS speaks Telugu.</p></div>
+          </li>
+        </ol>
+      </div>
+      <div class="flow__visual">
+        <div class="console">
+          <div class="console__bar"><span></span><span></span><span></span><em class="mono">activity</em></div>
+          <canvas class="console__sphere" id="flowSphere" aria-hidden="true"></canvas>
+          <div class="console__state mono" id="flowState">LISTENING</div>
+          <pre class="console__log mono" id="flowLog" aria-label="Example activity log"></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES (HORIZONTAL) ============ -->
+<section class="features" id="features">
+  <div class="features__pin">
+    <div class="wrap features__head">
+      <p class="eyebrow">Fifteen working feature areas in v1</p>
+      <h2 class="h2">Speak, type, or <em>wave</em>.<br>She gets on with it.</h2>
+      <p class="lede">Every feature below works today on the founder's laptop. Each one has a safety rule, and every tool she uses appears on screen as a one-line card so you can see what she is doing.</p>
+    </div>
+    <div class="hscroll" id="hscroll">
+      <div class="hscroll__track" id="hTrack">
+        <article class="fcard tilt"><span class="fcard__n mono">01</span><h3>Files</h3><p>Search, list and open documents, images, music and 3D files by plain name. If several match, she reads the list and asks which one.</p><q>Open the Pravah report</q></article>
+        <article class="fcard tilt"><span class="fcard__n mono">02</span><h3>File changes</h3><p>Create, move, rename and delete inside her workspace. Deletes go to a recycle folder for seven days.</p><q>Restore what you deleted</q></article>
+        <article class="fcard fcard--hero tilt"><span class="fcard__n mono">03</span><h3>3D models</h3><p>Lists your STL, OBJ, STEP, GLB and 3MF files, newest first, and opens them.</p><q>Show my latest 3D models</q><canvas class="fcard__mesh" aria-hidden="true"></canvas></article>
+        <article class="fcard tilt"><span class="fcard__n mono">04</span><h3>CAD print review</h3><p>Checks a model for holes, fit on the printer bed, overhangs and the weight of plastic it will use.</p><q>Is the chassis tray printable?</q><p class="fcard__out mono">212 × 130 × 46 mm · ≈221 g PLA</p></article>
+        <article class="fcard tilt"><span class="fcard__n mono">05</span><h3>Workshop mode</h3><p>A hands-free bench helper: timers, unit conversions, resistor colour codes, drill and torque tables, big text.</p><q>What's brown black orange?</q><p class="fcard__out mono">10 kΩ</p></article>
+        <article class="fcard tilt"><span class="fcard__n mono">06</span><h3>Pipelines</h3><p>One sentence records CPU, GPU, RAM and temperature, then builds an Excel chart, a 4-slide PowerPoint and a Word summary. No Office window opens.</p><q>Make a performance report of my PC for 60 seconds</q></article>
+        <article class="fcard tilt"><span class="fcard__n mono">07</span><h3>Performance profiles</h3><p>When a game starts she switches the power plan and steps off the GPU, freeing about 5 GB of VRAM. Both come back when it closes.</p><q>Gaming profile</q></article>
+        <article class="fcard tilt"><span class="fcard__n mono">08</span><h3>Vision</h3><p>Takes one webcam picture when asked, or reads an image you attach, with a second local model. Only while you have switched the camera on.</p><q>What am I holding?</q></article>
+        <article class="fcard tilt"><span class="fcard__n mono">09</span><h3>Attach and read</h3><p>Reads Word, PowerPoint, Excel, text and CSV. Images go to vision, 3D files to print review. Programs are refused.</p><q>Summarise this</q></article>
+        <article class="fcard tilt"><span class="fcard__n mono">10</span><h3>Memory and timeline</h3><p>Searches past chats and documents, plus a per-day timeline of the apps and files you used. One button forgets a day.</p><q>What was I doing yesterday?</q></article>
+        <article class="fcard tilt"><span class="fcard__n mono">11</span><h3>PC doctor</h3><p>Checks disk, memory hogs, startup apps and recent crashes, explains them and opens the right Windows settings page. Never runs admin commands.</p><q>Give my PC a checkup</q></article>
+        <article class="fcard tilt"><span class="fcard__n mono">12</span><h3>Coach</h3><p>Off by default. Flags low-contrast slides and new errors in your logs. Three tips an hour at most, with Fix it, Not now and Mute today.</p><q>Turn on under Modes</q></article>
+        <article class="fcard tilt"><span class="fcard__n mono">13</span><h3>Private vault</h3><p>Imports bank statement CSVs and shows spending by category. Encrypted with your Windows login. She goes fully offline while it's open.</p><q>Open my vault</q></article>
+        <article class="fcard tilt"><span class="fcard__n mono">14</span><h3>Gmail</h3><p>Reads and summarises your inbox, drafts replies. Sending needs your click on a confirm card, every single time.</p><q>Any new emails?</q></article>
+        <article class="fcard tilt"><span class="fcard__n mono">15</span><h3>Daily debrief</h3><p>An evening summary of what you did and what she did, then a question about tomorrow.</p><q>Give me my debrief</q></article>
+        <article class="fcard fcard--more"><h3>Also built in</h3><p>Time, weather, news, web search, local music and YouTube audio, spoken reminders, system status, "remember that…" facts, and a clipboard scam check for fake "paste this into Run" commands.</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE REAL APP ============ -->
+<section class="app" id="app">
+  <div class="wrap">
+    <div class="app__head">
+      <p class="eyebrow">The real dashboard, not a mock-up</p>
+      <h2 class="h2">You see every step she takes.</h2>
+      <p class="lede">Chat in the middle, a live workspace on the right, VRAM and an activity log always visible, and a red Stop button that is never more than one key away. These are unedited screenshots of v1.</p>
+    </div>
+    <div class="app__tabs" role="tablist" aria-label="Screenshots">
+      <button role="tab" class="tab is-on" aria-selected="true" data-shot="confirm" id="tab-confirm" type="button">Confirm card</button>
+      <button role="tab" class="tab" aria-selected="false" data-shot="dark" id="tab-dark" type="button">Web search, dark</button>
+      <button role="tab" class="tab" aria-selected="false" data-shot="attach" id="tab-attach" type="button">Attach and read</button>
+    </div>
+    <div class="app__stage">
+      <figure class="frame" id="appFrame">
+        <div class="frame__bar"><span></span><span></span><span></span><em class="mono">AURELIA · qwen3:8b, local</em></div>
+        <div class="frame__shots">
+          <img class="shot is-on" data-shot="confirm" src="assets/shot-confirm.webp" width="1600" height="1151" alt="AURELIA asking for a click to confirm deleting one file, with a 13-second countdown and the note that a spoken yes does not count" loading="lazy">
+          <img class="shot" data-shot="dark" src="assets/shot-dark.webp" width="1600" height="1151" alt="AURELIA in dark theme answering a web search, with the untrusted text chip lit and VRAM at 5.3 of 8 GB" loading="lazy">
+          <img class="shot" data-shot="attach" src="assets/shot-attach.webp" width="1600" height="970" alt="AURELIA refusing to attach notepad.exe and summarising an attached performance report" loading="lazy">
+        </div>
+        <figcaption class="frame__cap mono" id="shotCap">A delete request waits for a mouse click or Ctrl+Enter. Silence for 15 seconds means no.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECURITY ============ -->
+<section class="security" id="security">
+  <div class="wrap">
+    <div class="sec__head">
+      <p class="eyebrow eyebrow--red">Security model</p>
+      <h2 class="h1">The AI is <em>never</em> trusted.</h2>
+      <p class="lede">The language model can only suggest an action. A separate piece of ordinary code, the Policy Engine, checks every suggestion against a locked rulebook before anything happens. If a poisoned email or web page tricks the model, the rulebook still says no.</p>
+    </div>
+
+    <div class="rail" id="rail">
+      <div class="rail__labels" aria-hidden="true">
+        <div class="lane-label"><span class="mono">from you</span><code>open_file("Pravah_report.pdf")</code></div>
+        <div class="lane-label lane-label--bad"><span class="mono">from a poisoned email</span><code>delete_files("~/.ssh")</code></div>
+      </div>
+      <div class="rail__track">
+        <ol class="checks" aria-label="Policy Engine checks, in order">
+          <li><b>Kill switch</b><span>Has Stop been pressed?</span></li>
+          <li><b>Registry</b><span>Is it a known tool? run_shell and eval can't even be registered.</span></li>
+          <li><b>Schema</b><span>Exact typed arguments. Extra fields are rejected.</span></li>
+          <li><b>Channel</b><span>Safe mode, and which input may reach which tier.</span></li>
+          <li class="is-trap"><b>Paths</b><span>Real-path checks block .. tricks, symlinks, UNC paths, hidden streams, 8.3 names.</span></li>
+          <li><b>Domains</b><span>Each tool may reach only its own hosts over HTTPS.</span></li>
+          <li><b>Outbound</b><span>Caps how much of your text can leave.</span></li>
+          <li><b>Taint</b><span>Untrusted text in the last 3 turns tightens risky actions.</span></li>
+          <li><b>Tier</b><span>Run, announce, confirm, or block.</span></li>
+          <li><b>Rate limit</b><span>5 calls per request, 20 a minute.</span></li>
+        </ol>
+        <div class="lane lane--good"><span class="packet" id="pGood"></span><span class="lane__fill" id="fGood"></span></div>
+        <div class="lane lane--bad"><span class="packet packet--bad" id="pBad"></span><span class="lane__fill lane__fill--bad" id="fBad"></span></div>
+      </div>
+      <div class="rail__results">
+        <p class="verdict verdict--good" id="vGood"><span class="mono">TIER 1 · RUNS</span> Opens the report, then tells you what she did.</p>
+        <p class="verdict verdict--bad" id="vBad"><span class="mono">BLOCKED AT PATHS</span> .ssh is on the denylist. Logged to the hash-chained audit trail.</p>
+      </div>
+    </div>
+
+    <div class="sec__grid">
+      <div class="tiers">
+        <h3 class="h3">Four permission tiers</h3>
+        <div class="tier"><span class="tier__n mono">0</span><div><b>Safe</b> runs instantly<small>Time, weather, list a folder, system status</small></div></div>
+        <div class="tier"><span class="tier__n mono">1</span><div><b>Caution</b> runs, then she tells you<small>Open a file, play music, set a reminder</small></div></div>
+        <div class="tier tier--amber"><span class="tier__n mono">2</span><div><b>Danger</b> needs your click or Ctrl+Enter<small>Delete, move, send email, close apps</small></div></div>
+        <div class="tier tier--red"><span class="tier__n mono">3</span><div><b>Blocked</b> always denied and logged<small>Run shell, eval code, open .exe/.bat/.ps1, touch keys or passwords</small></div></div>
+      </div>
+
+      <div class="confirm" id="confirmDemo">
+        <p class="eyebrow">Try it</p>
+        <div class="ccard">
+          <div class="ccard__top"><b>Confirm this change</b><span class="mono" id="ccTimer">closes in 15 s · no answer = no</span></div>
+          <code class="ccard__cmd">Delete 1 file in AURELIA_workspace: old_draft_v2.txt</code>
+          <div class="ccard__btns">
+            <button class="btn btn--small btn--green" id="ccYes" type="button">Confirm · Ctrl+Enter</button>
+            <button class="btn btn--small btn--ghost" id="ccNo" type="button">Cancel · Esc</button>
+            <button class="btn btn--small btn--ghost" id="ccVoice" type="button">Say "yes"</button>
+          </div>
+          <div class="ccard__bar"><span id="ccBar"></span></div>
+        </div>
+        <p class="confirm__result mono" id="ccResult" aria-live="polite">Only a mouse click or Ctrl+Enter can approve. A spoken "yes" does not count.</p>
+      </div>
+    </div>
+
+    <div class="threats">
+      <h3 class="h3">Defences against specific attacks</h3>
+      <div class="threats__grid">
+        <div class="threat"><b>Prompt injection</b><p>Tool output is stripped of hidden HTML, zero-width and Unicode tag characters, wrapped in &lt;untrusted_data&gt; and taints the next three turns.</p></div>
+        <div class="threat"><b>Stealing secrets</b><p>.ssh, .aws, browser cookies, password managers, wallets, .env and key files are denied. API keys live in Windows Credential Manager.</p></div>
+        <div class="threat"><b>Running malware</b><p>50+ executable and macro types can never be opened or written. PowerShell, cmd, mshta and rundll32 are never used.</p></div>
+        <div class="threat"><b>Malicious 3D files</b><p>Extension, magic-byte and size checks, then loading in a separate process.</p></div>
+        <div class="threat"><b>ClickFix scams</b><p>A clipboard guard warns when copied text looks like a "paste this into Run" attack.</p></div>
+        <div class="threat"><b>Exposed AI server</b><p>Startup check confirms Ollama listens only on 127.0.0.1 and that she isn't running as admin.</p></div>
+        <div class="threat"><b>Swapped models</b><p>Model file digests are pinned. A changed model is flagged at startup.</p></div>
+        <div class="threat"><b>Cloud-sync leaks</b><p>OneDrive, Google Drive and Dropbox folders are denied, since anything written there leaves the laptop.</p></div>
+        <div class="threat"><b>Log tampering</b><p>Audit entries are hash-chained, so an edited line breaks the chain.</p></div>
+      </div>
+    </div>
+
+    <div class="never">
+      <h3 class="h3">Things she will never do</h3>
+      <ul>
+        <li>Run commands she writes herself, or open PowerShell, cmd or any .exe, .bat or .ps1</li>
+        <li>Touch passwords, SSH keys, browser cookies, crypto wallets, or Windows and Program Files</li>
+        <li>Send an email, upload anything or delete files without your click</li>
+        <li>Open the camera on her own</li>
+        <li>Read or change her own security rules</li>
+      </ul>
+      <p class="never__proof"><span class="count mono" data-to="97">97</span> automated attack tests pass after every change: injection, path tricks, blocked file types, domain escapes and rate abuse.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VRAM ============ -->
+<section class="vram" id="vram">
+  <div class="wrap">
+    <div class="vram__head">
+      <p class="eyebrow">On-device engineering</p>
+      <h2 class="h2">A whole assistant in <em>8&nbsp;GB</em> of graphics memory.</h2>
+      <p class="lede">Speech recognition, an 8B tool-calling model and two offline voices share one laptop GPU, with room to spare. When you ask her to look at something, the main model steps aside, the vision model loads, looks, and hands back.</p>
+    </div>
+    <div class="gpu" id="gpu">
+      <div class="gpu__top mono"><span>RTX 5060 Laptop GPU</span><span><b id="vramNum">0.0</b> / 8.0 GB</span></div>
+      <div class="gpu__bar">
+        <span class="seg seg--llm" style="--w:71.25%"><i>qwen3:8b · 5.7 GB</i></span>
+        <span class="seg seg--stt" style="--w:12.5%"><i>Whisper · 1.0</i></span>
+        <span class="seg seg--tts" style="--w:6.25%"><i>Voices</i></span>
+      </div>
+      <div class="gpu__legend mono">
+        <span><i class="sw sw--llm"></i>Language model + context (q8 KV cache, flash attention) ≈ 5.7 GB</span>
+        <span><i class="sw sw--stt"></i>Whisper large-v3-turbo, int8 ≈ 1 to 1.7 GB</span>
+        <span><i class="sw sw--tts"></i>Kokoro + MMS voices ≈ 0.5 GB</span>
+      </div>
+    </div>
+    <div class="wins">
+      <div class="win"><p class="win__big"><span class="count" data-to="99">99</span><small>ms</small> → <span class="count gold" data-to="22">22</span><small>ms</small></p><p>Sphere UI frame time, after moving 12,500 Python draw calls into 6 batched numpy calls. About 10 fps to 45 fps.</p></div>
+      <div class="win"><p class="win__big">≈<span class="count" data-to="0.7" data-dec="1">0.7</span><small>s</small></p><p>Speech to text on the GPU. She starts talking while the model is still writing her second sentence.</p></div>
+      <div class="win"><p class="win__big"><span class="count" data-to="5">5</span><small>GB</small></p><p>VRAM she gives back when a game or video editor starts, restored when it closes.</p></div>
+      <div class="win"><p class="win__big">₹<span class="count" data-to="0">0</span></p><p>Server cost per user. Every token is generated on the customer's own GPU, so there are no inference bills to pass on.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TELUGU ============ -->
+<section class="telugu" id="telugu">
+  <div class="telugu__giant" aria-hidden="true"><span lang="te">నమస్కారం · ఈ రోజు వార్తలు ఏంటి? · నమస్కారం ·</span></div>
+  <div class="wrap telugu__grid">
+    <div>
+      <p class="eyebrow">Indian languages, offline, by voice</p>
+      <h2 class="h2">Built for the next <em>billion</em> users, starting with Telugu.</h2>
+      <p class="lede">Speak English or Telugu and she answers in the same language, in Telugu script. Mixed Tenglish is understood. She listens only for the languages you set, so Telugu is never misheard as Hindi. No data plan required.</p>
+    </div>
+    <div class="convo">
+      <div class="bubble bubble--you"><span class="mono">YOU</span><p lang="te">నమస్కారం, ఈ రోజు వార్తలు ఏంటి?</p></div>
+      <div class="bubble bubble--her"><span class="mono">AURELIA</span><p><span lang="te">నమస్కారం</span> Sir, all systems nominal.</p></div>
+      <div class="langs">
+        <div class="lang is-live"><b lang="te">తెలుగు</b><small>Live · ~95M speakers</small></div>
+        <div class="lang is-live"><b>English</b><small>Live</small></div>
+        <div class="lang"><b lang="hi">हिन्दी</b><small>Next</small></div>
+        <div class="lang"><b lang="ta">தமிழ்</b><small>Planned</small></div>
+        <div class="lang"><b lang="kn">ಕನ್ನಡ</b><small>Planned</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMPARE ============ -->
+<section class="compare" id="compare">
+  <div class="wrap">
+    <p class="eyebrow">How AURELIA is different</p>
+    <h2 class="h2">What the cloud <em>can't</em> build.</h2>
+    <div class="table-scroll">
+      <table class="ctable">
+        <thead><tr><th scope="col"></th><th scope="col">ChatGPT / Gemini apps</th><th scope="col">Microsoft Copilot</th><th scope="col">Alexa / Google Assistant</th><th scope="col" class="us">AURELIA</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Runs offline on your PC</th><td class="no">No</td><td class="mid">Partly, Copilot+ PCs</td><td class="no">No</td><td class="us yes">Yes, fully</td></tr>
+          <tr><th scope="row">Your files leave the device</th><td class="no">Yes, when shared</td><td class="no">Often</td><td class="no">Yes</td><td class="us yes">Never</td></tr>
+          <tr><th scope="row">Telugu voice, offline</th><td class="no">No</td><td class="no">No</td><td class="mid">Cloud only</td><td class="us yes">Yes</td></tr>
+          <tr><th scope="row">Controls local files and apps</th><td class="mid">Limited</td><td class="mid">Inside Office</td><td class="no">No</td><td class="us yes">Yes, policy-checked</td></tr>
+          <tr><th scope="row">3D models, print review, workshop</th><td class="no">No</td><td class="no">No</td><td class="no">No</td><td class="us yes">Yes</td></tr>
+          <tr><th scope="row">AI treated as untrusted by design</th><td class="no">No</td><td class="no">No</td><td class="no">No</td><td class="us yes">Yes, 97 tests</td></tr>
+          <tr><th scope="row">Cost to run</th><td class="mid">Subscription</td><td class="mid">Subscription</td><td class="mid">Free, ads and data</td><td class="us yes">Your own GPU</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHO ============ -->
+<section class="who" id="who">
+  <div class="wrap">
+    <p class="eyebrow">Who she's for</p>
+    <h2 class="h2">People who already own the hardware, and can't paste their work into a chatbot.</h2>
+    <div class="who__grid">
+      <article class="who__card tilt"><h3>Engineering and maker students</h3><p>One voice for 3D model review, print checks, workshop timers and auto-built lab reports.</p></article>
+      <article class="who__card tilt"><h3>Gamers and creators</h3><p>Already own an RTX laptop. She steps off the GPU the moment a game or editor starts.</p></article>
+      <article class="who__card tilt"><h3>CAs, lawyers and clinics</h3><p>Client data never leaves the PC. An encrypted vault, an offline lock and an audit log that fits India's DPDP Act.</p></article>
+      <article class="who__card tilt"><h3>Telugu-speaking families</h3><p>Help by voice in their own language, with no cloud account to create.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <p class="eyebrow">Planned editions</p>
+    <h2 class="h2">Free to start. Pay for what saves you hours.</h2>
+    <p class="lede">These are starting points. The closed beta will test what people actually pay before anything goes on sale.</p>
+    <div class="plans">
+      <article class="plan"><h3>Free</h3><p class="plan__price">₹0</p><p class="plan__for">Anyone with an RTX laptop</p><ul><li>Voice in English</li><li>Files and music</li><li>Reminders</li></ul></article>
+      <article class="plan plan--pro"><span class="plan__tag mono">Most useful</span><h3>Pro</h3><p class="plan__price">≈₹299<small>/month</small></p><p class="plan__for">or ≈₹2,499 one-time · students, makers, gamers</p><ul><li>Telugu, then Hindi</li><li>Pipelines and CAD review</li><li>Workshop mode and vision</li><li>Memory and Gmail</li></ul></article>
+      <article class="plan"><h3>Privacy</h3><p class="plan__price">≈₹999<small>/seat/month</small></p><p class="plan__for">CAs, lawyers, clinics, small firms</p><ul><li>Private vault</li><li>Privacy receipts and audit export</li><li>Offline lock</li><li>Priority support</li></ul></article>
+      <article class="plan"><h3>Education</h3><p class="plan__price">Per lab<small>/year</small></p><p class="plan__for">College maker labs, robotics clubs</p><ul><li>Workshop and CAD</li><li>Robot missions</li><li>Multi-user setup</li></ul></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ROADMAP ============ -->
+<section class="roadmap" id="roadmap">
+  <div class="wrap roadmap__grid">
+    <div class="roadmap__intro">
+      <p class="eyebrow">Roadmap</p>
+      <h2 class="h2">Where she goes <em>next</em>.</h2>
+      <p class="lede">The next build adds the moment people remember: pinch a 3D model in mid-air and turn it with your hand.</p>
+    </div>
+    <ol class="timeline" id="timeline">
+      <span class="timeline__line" aria-hidden="true"><span id="tlFill"></span></span>
+      <li class="is-done"><span class="mono">Oct 2026 · done</span><h3>v1</h3><p>All 15 feature areas, two languages, the dashboard and the security layer with 97 passing tests.</p></li>
+      <li><span class="mono">Weeks 1 to 2</span><h3>Pitch pack</h3><p>Gesture-controlled 3D viewer, "Hey Aurelia" wake word, demo video.</p></li>
+      <li><span class="mono">Weeks 2 to 5</span><h3>Ship prep</h3><p>Commercially licensed Telugu voice, one signed installer, closed beta with 5 to 10 testers, privacy policy and terms.</p></li>
+      <li><span class="mono">Week 6</span><h3>Public beta</h3><p>Download from this site and the Microsoft Store. Free and Pro editions.</p></li>
+      <li><span class="mono">Months 2 to 6</span><h3>Updates</h3><p>Voice ID, privacy receipts, Hindi, room scenes, robot missions, the Privacy edition.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ FOUNDER ============ -->
+<section class="founder" id="founder">
+  <div class="wrap founder__grid">
+    <div class="founder__id">
+      <div class="monogram" aria-hidden="true"><span>P</span></div>
+      <p class="eyebrow">Founder</p>
+      <h2 class="h2">Pranav Abhinay Gupta Vanakayala</h2>
+      <p class="founder__role">Robotics &amp; AI engineer · Bengaluru, India</p>
+      <p class="lede">I build robots, and I wanted one of them to have a voice and a personality, like JARVIS. Cloud assistants needed the internet, sent everything to a server and barely spoke Telugu, my first language. So I built one that lives on the laptop.</p>
+      <div class="founder__links">
+        <a class="btn btn--small btn--ghost" href="https://www.linkedin.com/in/pranav-abhinay-98532322a" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn--small btn--ghost" href="https://doi.org/10.64388/IREV10I2-1722568" target="_blank" rel="noopener">Published paper</a>
+      </div>
+    </div>
+    <div class="founder__cv">
+      <div class="cv">
+        <h3 class="cv__h mono">Now</h3>
+        <ul>
+          <li><b>B.Tech, Robotics and Artificial Intelligence</b><span>Amrita Vishwa Vidyapeetham, Bengaluru · 2023 to 2027</span></li>
+          <li><b>Research Intern, Pravah ROV</b><span>IIT Guwahati · built Pravah-1, an underwater ROV, from concept to working prototype</span></li>
+          <li><b>Co-founder, IntentShar</b><span>A platform that takes student ideas from concept to mentors, investors and companies</span></li>
+        </ul>
+      </div>
+      <div class="cv">
+        <h3 class="cv__h mono">Research</h3>
+        <ul>
+          <li><b>Layer-Conditional Emotional Weighting</b><span>Sole author. Emotion-aware memory consolidation for AI agents. IRE Journals, Vol. 10, Issue 2, Aug 2026</span></li>
+          <li><b>Battery State-of-Health prediction</b><span>Co-author. Selected for presentation at CEEE 2026 (IEEE)</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HONEST STATUS + CTA ============ -->
+<section class="beta" id="beta">
+  <div class="wrap beta__grid">
+    <div class="status">
+      <p class="eyebrow">Where AURELIA is today</p>
+      <ul class="status__list">
+        <li class="ok">Working v1, live demo ready</li>
+        <li class="ok">97 security tests passing</li>
+        <li class="wait">Runs on one laptop so far. Other PCs come with the closed beta</li>
+        <li class="wait">No one-click installer yet</li>
+        <li class="wait">Telugu voice being moved to a commercially licensed model before sale</li>
+      </ul>
+    </div>
+    <div class="cta">
+      <h2 class="h1">Meet her <em>first</em>.</h2>
+      <p class="lede">The closed beta is for 5 to 10 people on different RTX laptops. If you have one and want a private JARVIS, write in.</p>
+      <div class="contact">
+        <div class="contact__row"><span class="mono">Email</span><a href="mailto:pranavagv2005@gmail.com?subject=AURELIA%20closed%20beta" id="emailText">pranavagv2005@gmail.com</a><button class="copy" type="button" data-copy="pranavagv2005@gmail.com">Copy</button></div>
+        <div class="contact__row"><span class="mono">Phone</span><a href="tel:+919347267074" id="phoneText">+91 93472 67074</a><button class="copy" type="button" data-copy="+91 93472 67074">Copy</button></div>
+        <div class="contact__row"><span class="mono">Based in</span><span>Bengaluru, India</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div class="footer__brand"><span class="brand__orb" aria-hidden="true"></span><span class="brand__word">Aurelia</span></div>
+    <p class="footer__legal">© 2026 Pranav Abhinay Gupta Vanakayala. All rights reserved. AURELIA, its name, design and software are the work of Pranav Abhinay Gupta Vanakayala. qwen3, Gemma, Whisper, Kokoro, MMS, Ollama, NVIDIA, RTX, Windows and other names belong to their respective owners and are mentioned only to describe compatibility.</p>
+    <a class="footer__top mono" href="#top">Back to top ↑</a>
+  </div>
+</footer>
+<!--PAGE-END-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="assets/main.js"></script>
+</body>
+</html>
